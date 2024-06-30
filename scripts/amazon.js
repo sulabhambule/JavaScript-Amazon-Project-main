@@ -60,6 +60,7 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
+// function to update the quantity when clcik the update button.
 function updateCartQuantity() {
   let cartQuantitiy = 0;
   cart.forEach((cartItem) => {
