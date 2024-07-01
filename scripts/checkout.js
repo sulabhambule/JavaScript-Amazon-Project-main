@@ -104,7 +104,7 @@ function deliveryOptionsHTML(matchingProduct, cartItem) {
 
     html += `
       <div class="delivery-option js-delivery-option"
-        data-product-id = "${matchingProduct.Id}"
+        data-product-id = "${matchingProduct.id}"
         data-delivery-option-id = "${deliveryOption.id}">
         <input type="radio"
           ${isChecked ? 'checked' : ''}
