@@ -10,7 +10,6 @@ import {
 import { renderPaymentSummary } from "./paymentSummary.js";
 
 
-
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
 
