@@ -6,19 +6,38 @@ import { loadCart } from "../data/cart.js";
 // import '../data/cart-class.js';
 // import '../data/backend-practice.js';
 
+//async >> Promises >>> callBack functions
 
+async function loadPage() {
+
+  await loadProductsFetch(); // wait to complete action
+  // only used await when it is inside async function
+
+  const value = await new Promise((resolve) => {
+    loadCart(() => {
+      resolve('value3');
+    });
+  });
+
+  renderOrderSummary();
+  renderPaymentSummary();
+}
+loadPage();
+
+/*
 Promise.all([
   loadProductsFetch(),
   new Promise((resolve) => {
     loadCart(() => {
       resolve();
-    });
+    }); 
   })
 
 ]).then(() => {
   renderOrderSummary();
   renderPaymentSummary();
 });
+*/
 
 /*
 new Promise((resolve) => {
