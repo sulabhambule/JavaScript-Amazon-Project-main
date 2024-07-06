@@ -7,7 +7,7 @@ loadProducts(renderProjectGrid);
 
 function renderProjectGrid() {
 
-  let productsHTML = ``;
+  let productsHTML = '';
 
   products.forEach((product) => {
     productsHTML += `
@@ -71,9 +71,11 @@ function renderProjectGrid() {
   // function to update the quantity when clcik the update button.
   function updateCartQuantity() {
     let cartQuantitiy = 0;
+
     cart.forEach((cartItem) => {
       cartQuantitiy += cartItem.quantity;
     });
+    
     document.querySelector('.js-cart-quantity')
       .innerHTML = cartQuantitiy;
   }

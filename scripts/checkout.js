@@ -9,15 +9,19 @@ import { loadCart } from "../data/cart.js";
 //async >> Promises >>> callBack functions
 
 async function loadPage() {
+  try {
+    await loadProductsFetch(); // wait to complete action
+    // only used await when it is inside async function
 
-  await loadProductsFetch(); // wait to complete action
-  // only used await when it is inside async function
-
-  const value = await new Promise((resolve) => {
-    loadCart(() => {
-      resolve('value3');
+    const value = await new Promise((resolve, reject) => {
+      loadCart(() => {
+        resolve('value3');
+      });
     });
-  });
+
+  } catch (error) {
+    console.log('Unexpected error. Please try again later')
+  }
 
   renderOrderSummary();
   renderPaymentSummary();
